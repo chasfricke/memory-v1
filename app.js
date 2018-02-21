@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
 app.get("/resolutions", (request, response) => {
+  console.log('get');
     queries.list().then(resolutions => {
         response.json({resolutions});
     }).catch(console.error);
